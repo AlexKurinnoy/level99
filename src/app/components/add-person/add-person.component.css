@@ -1,0 +1,67 @@
+
+.verticalControl, .horizontalControl{
+  background: white;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px -3px #000000;
+  box-shadow: 0px 0px 15px -3px #000000;
+}
+.verticalControl>input, .horizontalControl>.row>input{
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+}
+
+.verticalControl>.mat-raised-button, .horizontalControl>.mat-raised-button{
+  background: blueviolet;
+  color: white;
+  width: 150px;
+  margin: 0 auto;
+}
+.verticalControl>.mat-raised-button:disabled, .horizontalControl>.mat-raised-button:disabled{
+  background: darkgrey;
+}
+
+.verticalControl{
+  flex-flow: column;
+  max-width: 350px;
+  min-width: 150px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.verticalControl>input{
+  margin: 5px 0;
+}
+
+.horizontalControl{
+  flex-flow: column wrap;
+  min-width: 300px;
+  max-width: 700px;
+  padding: 20px 15px;
+}
+.horizontalControl>.row>input{
+  margin: 5px;
+  flex-basis: 50%;
+  display: flex;
+}
+.horizontalControl>.row{
+  display: flex;
+  flex-flow: row;
+}
+
+.errorMess{
+  color: red;
+  font-size: .7rem;
+}
+
+@media screen and (max-width: 480px) {
+  .horizontalControl>.row{
+     flex-flow: column;
+    height: 100px;
+  }
+
+}

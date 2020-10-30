@@ -1,0 +1,33 @@
+
+.modalContent{
+  max-width: 600px;
+  min-width: 300px;
+  display: flex;
+  flex-flow: column;
+}
+.modalHeader{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalContent>.modalInputs{
+  min-height: 100px;
+}
+.modalContent>.modalInputs>input{
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding-left: 10px;
+  margin:2px;
+}
+.modalContent>.modalInputs>mat-checkbox{
+  margin:5px;
+}
+.modalContent>.mat-dialog-actions>.mat-raised-button{
+  color: white;
+  width: 150px;
+  background: blueviolet;
+}
+.modalContent>.mat-dialog-actions>.mat-raised-button:disabled{
+  background: darkgrey;
+}

@@ -1,0 +1,27 @@
+.mat-raised-button{
+  background: #1393fb;
+  color: white;
+  font-size: .8rem;
+  margin-bottom: 3px;
+  }
+ul{
+  padding: 0;
+  margin: 15px;
+  display: inline-block;
+}
+ul>li{
+  list-style-type: none;
+}
+
+.control{
+  display: inline-flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.control-button{
+  display: flex;
+  justify-content: flex-end;
+}
+

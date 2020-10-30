@@ -1,0 +1,22 @@
+<div class="modalContent">
+  <div class="modalHeader" mat-dialog-title>
+    <button (click)=" onNoClick()" mat-icon-button><mat-icon>close</mat-icon></button>
+  </div>
+  <div class="modalInputs"  mat-dialog-content>
+    <input [(ngModel)]="task.name"
+           type="text"
+           placeholder="name">
+    <input [(ngModel)]="task.surname"
+           type="text"
+           placeholder="surname">
+    <input [(ngModel)]="task.city"
+           type="text"
+           placeholder="city" >
+    <mat-checkbox [(ngModel)]="task.completed"> Totally agree </mat-checkbox>
+
+  </div>
+  <div class="modalSend" mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]="task" [disabled]="!task.completed">Save</button>
+  </div>
+
+</div>

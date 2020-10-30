@@ -1,0 +1,61 @@
+<form class="verticalControl" [formGroup]="verticalControl" (ngSubmit)="onSubmitVertical()">
+  <input type="text" placeholder="name" formControlName="name">
+  <div class="errorMess"
+       [hidden]="!verticalControl.get('name').touched || verticalControl.get('name').valid">
+              The field must be at least two letters
+  </div>
+  <input type="text" placeholder="surname" formControlName="surname">
+  <div class="errorMess"
+       [hidden]="!verticalControl.get('surname').touched || verticalControl.get('surname').valid">
+              The field must be at least two letters
+  </div>
+  <input type="text" placeholder="age" formControlName="age">
+  <div class="errorMess"
+       [hidden]="!verticalControl.get('age').touched || verticalControl.get('age').valid">
+              The field must contain at least one positive digit
+  </div>
+  <input type="text"  placeholder="city" formControlName="city">
+  <div class="errorMess"
+       [hidden]="!verticalControl.get('city').touched || verticalControl.get('city').valid">
+              The field must be at least two letters
+  </div>
+  <button mat-raised-button type="submit" [disabled]="!verticalControl.valid">Add</button>
+</form>
+
+<form class="horizontalControl" [formGroup]="horizontalControl" (ngSubmit)="onSubmitHorizontal()">
+  <div class="row">
+    <input type="text" placeholder="name" formControlName="name">
+
+    <input type="text" placeholder="surname" formControlName="surname">
+
+  </div>
+  <div class="row">
+    <div class="errorMess"
+         [hidden]="!horizontalControl.get('surname').touched || horizontalControl.get('surname').valid">
+      The field must be at least two letters
+    </div>
+    <div class="errorMess"
+         [hidden]="!horizontalControl.get('name').touched || horizontalControl.get('name').valid">
+      The field must be at least two letters
+    </div>
+  </div>
+  <div class="row">
+    <input type="text" placeholder="age" formControlName="age">
+
+    <input type="text" placeholder="city" formControlName="city">
+  </div>
+  <div class="row">
+    <div class="errorMess"
+         [hidden]="!horizontalControl.get('age').touched || horizontalControl.get('age').valid">
+      The field must contain at least one positive digit
+    </div>
+    <div class="errorMess"
+         [hidden]="!horizontalControl.get('city').touched || horizontalControl.get('city').valid">
+             The field must be at least two letters
+    </div>
+  </div>
+
+  <button mat-raised-button type="submit" [disabled]="!horizontalControl.valid">Add</button>
+</form>
+
+

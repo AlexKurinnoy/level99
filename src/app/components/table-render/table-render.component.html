@@ -1,0 +1,76 @@
+<!--<mat-table [dataSource]="data">-->
+
+<!--  <ng-container matColumnDef="name">-->
+<!--    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>-->
+<!--    <mat-call *matCellDef="let person">{{person.name}}</mat-call>-->
+<!--  </ng-container>-->
+<!--</mat-table>-->
+
+
+<!--<table mat-table>-->
+<!--  <tr>-->
+
+<!--    <td>name</td>-->
+<!--    <td>surname</td>-->
+<!--    <td>age</td>-->
+<!--    <td>city</td>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let person of data">-->
+
+<!--    <td>{{person.name}}</td>-->
+<!--    <td>{{person.surname}}</td>-->
+<!--    <td>{{person.age}}</td>-->
+<!--    <td>{{person.city}}</td>-->
+<!--    <td ><p (click)="delRow(person, serialArr)" >delete</p></td>-->
+<!--    <td ><p (click)="openModal()">>edit</p></td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<!--<table mat-table [dataSource]="data" >-->
+<!--  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">-->
+<!--    <th mat-header-cell *matHeaderCellDef> {{column}} </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--</table>-->
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="surname">
+    <th mat-header-cell *matHeaderCellDef> Surname </th>
+    <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Age </th>
+    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef> City </th>
+    <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>   </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="openDialog(element, serialArr)" >Edit</button>
+      <button mat-button (click)="delRow(element, serialArr)">Delete</button>
+
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

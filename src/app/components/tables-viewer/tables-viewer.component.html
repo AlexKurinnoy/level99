@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let table of allPeople$ | async" >
+
+    <div class="control">
+      <div class="control-button">
+
+        <button mat-raised-button (click)="copy(table)">Copy table</button>
+        <span *ngIf="!table.primary">
+            <button (click)="del(table.serial)" mat-icon-button><mat-icon>close</mat-icon></button>
+        </span>
+
+      </div>
+    <app-table-render [data]="table.people"  [serialArr]="table.serial" ></app-table-render>
+    </div>
+  </li>
+</ul>
